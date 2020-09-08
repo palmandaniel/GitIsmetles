@@ -1,7 +1,7 @@
 # Jatekprogram (ko, papir, ollo)
 
 ## Jatekmenet: 1.0
-- [] A számítógép választ egy lehetõséget
+- [x] A számítógép választ egy lehetõséget
 - [] A felhasználó megad egy lehetõséget
 - Nyerés:
 	-Kõ legyõzi az ollót
