@@ -1,2 +1,2 @@
-# GitIsmetles
-GitIsmetles-proba
+# Jatekprogram (ko, papir, ollo)
+
