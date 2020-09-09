@@ -7,4 +7,13 @@
 	-Kõ legyõzi az ollót
 	-Papír legyõzi a követ
 	-Olló legyõzi a követ
-- [] Kiírjuk az eredményt
+
+
+
+- [ ] Nyerés megállapítását kiszervezzük metódusba
+ - visszaadott érték 0-1-2
+ - 0 döntetlen
+ - 1 gép nyer
+ - 2 játékos nyer
+
+- [x] Kiírjuk az eredményt
