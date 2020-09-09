@@ -8,6 +8,7 @@ namespace GitIsmetles
 {
     class Program
     {
+        static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
         static int EmberNyer(int gep, int ember)
         {
             if (gep == 0 && ember == 1 || gep == 1 && ember == 2 || gep == 2 && ember == 0)
@@ -26,6 +27,8 @@ namespace GitIsmetles
 
         static void EredmenyKiiras(int gep, int ember)
         {
+            Console.WriteLine("Gép: {0} --- Játékos: {1}", lehetoseg[gep], lehetoseg[ember]);
+
             switch (EmberNyer(gep, ember))
             {
                 case 0:
@@ -45,24 +48,13 @@ namespace GitIsmetles
         static void Main(string[] args)
         {
             Random veletlen = new Random();
-            string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
-
+            
             int gepValasz = veletlen.Next(0, 3);
-
-
-            //Console.WriteLine("Gép választása: {0}", lehetoseg[gepValasz]);
 
             int jatekosValasz;
             Console.WriteLine("Kő(0), Papír(1), Olló(2)");
             Console.WriteLine("Válassz: ");
             jatekosValasz = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosValasz]);
-            //Console.WriteLine("Gép választása: {0}", lehetoseg[gepValasz]);
-
-
-            Console.WriteLine("Gép: {0} --- Játékos: {1}", lehetoseg[gepValasz], lehetoseg[jatekosValasz]);
-
-
 
             EredmenyKiiras(gepValasz, jatekosValasz);
             Console.ReadKey();
