@@ -25,6 +25,18 @@ namespace GitIsmetles
             }
         }
 
+        static int JatekosValasztas()
+        {
+            Console.WriteLine("Kő(0), Papír(1), Olló(2)");
+            Console.WriteLine("Válassz: ");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
+        static int GepValasztas()
+        {
+            Random veletlen = new Random();
+            return veletlen.Next(0, 3);
+        }
         static void EredmenyKiiras(int gep, int ember)
         {
             Console.WriteLine("Gép: {0} --- Játékos: {1}", lehetoseg[gep], lehetoseg[ember]);
@@ -47,14 +59,9 @@ namespace GitIsmetles
         }
         static void Main(string[] args)
         {
-            Random veletlen = new Random();
             
-            int gepValasz = veletlen.Next(0, 3);
-
-            int jatekosValasz;
-            Console.WriteLine("Kő(0), Papír(1), Olló(2)");
-            Console.WriteLine("Válassz: ");
-            jatekosValasz = Convert.ToInt32(Console.ReadLine());
+            int jatekosValasz = JatekosValasztas();
+            int gepValasz = GepValasztas();
 
             EredmenyKiiras(gepValasz, jatekosValasz);
             Console.ReadKey();
