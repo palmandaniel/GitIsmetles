@@ -28,11 +28,11 @@ namespace GitIsmetles
             {
                 Console.WriteLine("Játékos nyert");
             }
-            if (gepValasz == jatekosValasz)
+            else if (gepValasz == jatekosValasz)
             {
                 Console.WriteLine("Döntetlen");
             }
-            if (gepValasz == 0 && jatekosValasz == 2 || gepValasz == 1 && jatekosValasz == 0 || gepValasz == 2 && jatekosValasz == 1)
+            else if (gepValasz == 0 && jatekosValasz == 2 || gepValasz == 1 && jatekosValasz == 0 || gepValasz == 2 && jatekosValasz == 1)
             {
                 Console.WriteLine("Gép nyert");
             }
