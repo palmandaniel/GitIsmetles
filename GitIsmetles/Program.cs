@@ -13,22 +13,22 @@ namespace GitIsmetles
         {
             if (gep == 0 && ember == 1 || gep == 1 && ember == 2 || gep == 2 && ember == 0)
             {
-                return 2;
+                return 2; //jatekos nyer
             }
             else if (gep == ember)
             {
-                return 0;
+                return 0; //dontetlen
             }
             else
             {
-                return 1;
+                return 1; //gep nyer
             }
         }
 
         static int JatekosValasztas()
         {
             Console.WriteLine("Kő(0), Papír(1), Olló(2)");
-            Console.WriteLine("Válassz: ");
+            Console.Write("Válassz: ");
             return Convert.ToInt32(Console.ReadLine());
         }
 
@@ -57,14 +57,40 @@ namespace GitIsmetles
 
             }
         }
+        
+
         static void Main(string[] args)
         {
+            bool tovabb = true;
             
-            int jatekosValasz = JatekosValasztas();
-            int gepValasz = GepValasztas();
+            while (tovabb)
+            {
+                int jatekosValasz = JatekosValasztas();
 
-            EredmenyKiiras(gepValasz, jatekosValasz);
+                int gepValasz = GepValasztas();
+
+                EredmenyKiiras(gepValasz, jatekosValasz);
+
+                tovabb = AkarJatszani();
+            }
+            
             Console.ReadKey();
+        }
+
+        private static bool AkarJatszani()
+        {
+            Console.WriteLine("*******************************************************************************");
+            Console.WriteLine("Tovább? [i/n]");
+            string valasz = Console.ReadLine().ToLower();
+            Console.WriteLine("\n*******************************************************************************");
+            if (valasz == "i")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
