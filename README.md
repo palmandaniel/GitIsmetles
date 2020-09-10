@@ -24,5 +24,11 @@
 
 ##Játékmenet 2.0
 - [x] Addig játszunk amíg ki nem lépünk a játékból
-- [ ] statisztika
+- [x] statisztika megvalositasa
  - gép, játékos, mennyi menet
+
+- [] Eredmények fájlba írása és megjelenítése
+ - 1. érték --> menet
+   2. érték --> játékos
+   3. érték --> gép
+ - értékek ';' -vel elválasztva

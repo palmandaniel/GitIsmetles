@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace GitIsmetles
 {
@@ -67,6 +68,7 @@ namespace GitIsmetles
 
         static void Main(string[] args)
         {
+            StatisztikaFajlbol();
             bool tovabb = true;
             
             while (tovabb)
@@ -108,7 +110,31 @@ namespace GitIsmetles
             else
             {
                 return false;
+            }           
+        }
+        private static void StatisztikaFajlbol()
+        {
+            int menetSzam;
+            int jatekosGyoz;
+            int gepGyoz;
+            StreamReader stat = new StreamReader("statisztika.txt");
+            while (!stat.EndOfStream)
+            {
+                string[] sor = stat.ReadLine().Split(';');
+                int[] adat = new int[3];
+                //adat[0] = int.Parse(sor[0]);              I
+                //adat[1] = int.Parse(sor[1]);              I   
+                //adat[2] = int.Parse(sor[2]);              V
+                for (int i = 0; i < adat.Length; i++)
+                {
+                    adat[i] = int.Parse(sor[i]);
+                }
+                Console.WriteLine("{0}\t{1}\t{2}", sor[0], sor[1], sor[2]);
             }
+            stat.Close();
+
+ 
+            Console.WriteLine("*----------->Statisztika vége<-----------*\n");
         }
     }
 }
