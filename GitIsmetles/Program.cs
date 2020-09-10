@@ -8,11 +8,16 @@ namespace GitIsmetles
 {
     class Program
     {
+        static int gepNyer = 0;
+        static int jatekosNyer = 0;
+        static int menet = 0;
+
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
         static int EmberNyer(int gep, int ember)
         {
             if (gep == 0 && ember == 1 || gep == 1 && ember == 2 || gep == 2 && ember == 0)
             {
+                jatekosNyer++;
                 return 2; //jatekos nyer
             }
             else if (gep == ember)
@@ -21,6 +26,7 @@ namespace GitIsmetles
             }
             else
             {
+                gepNyer++;
                 return 1; //gep nyer
             }
         }
@@ -65,6 +71,8 @@ namespace GitIsmetles
             
             while (tovabb)
             {
+                menet++;
+
                 int jatekosValasz = JatekosValasztas();
 
                 int gepValasz = GepValasztas();
@@ -73,8 +81,18 @@ namespace GitIsmetles
 
                 tovabb = AkarJatszani();
             }
+
+            StatisztikaKiiras();
             
             Console.ReadKey();
+        }
+
+        private static void StatisztikaKiiras()
+        {
+            Console.WriteLine("\n*******************************************************************************");
+            Console.WriteLine("Menetek száma: {0}" +
+                "\tJátékos győzelmének száma: {1} " +
+                "\tGép győzelmének száma: {2}",menet, jatekosNyer, gepNyer);
         }
 
         private static bool AkarJatszani()
