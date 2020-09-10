@@ -27,7 +27,7 @@
 - [x] statisztika megvalositasa
  - gép, játékos, mennyi menet
 
-- [] Eredmények fájlba írása és megjelenítése
+-[x] Eredmények fájlba írása és megjelenítése
  - 1. érték --> menet
    2. érték --> játékos
    3. érték --> gép

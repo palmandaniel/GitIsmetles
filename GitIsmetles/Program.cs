@@ -12,6 +12,8 @@ namespace GitIsmetles
         static int gepNyer = 0;
         static int jatekosNyer = 0;
         static int menet = 0;
+        static bool tovabb = true;
+        static bool swBool = false;
 
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
         static int EmberNyer(int gep, int ember)
@@ -63,13 +65,14 @@ namespace GitIsmetles
 
 
             }
+            swBool = true;
         }
         
 
         static void Main(string[] args)
         {
             StatisztikaFajlbol();
-            bool tovabb = true;
+            
             
             while (tovabb)
             {
@@ -85,6 +88,9 @@ namespace GitIsmetles
             }
 
             StatisztikaKiiras();
+            
+            
+            StatisztikaFajlba();
             
             Console.ReadKey();
         }
@@ -114,9 +120,6 @@ namespace GitIsmetles
         }
         private static void StatisztikaFajlbol()
         {
-            int menetSzam;
-            int jatekosGyoz;
-            int gepGyoz;
             StreamReader stat = new StreamReader("statisztika.txt");
             while (!stat.EndOfStream)
             {
@@ -130,11 +133,25 @@ namespace GitIsmetles
                     adat[i] = int.Parse(sor[i]);
                 }
                 Console.WriteLine("{0}\t{1}\t{2}", sor[0], sor[1], sor[2]);
+                break;
             }
             stat.Close();
 
  
             Console.WriteLine("*----------->Statisztika vége<-----------*\n");
         }
+
+        private static void StatisztikaFajlba()
+        {
+            int j = 0;
+            StreamWriter stat = new StreamWriter("statisztika.txt");
+            while (tovabb == false && j<1)
+            {
+                stat.WriteLine("{0};{1};{2}",menet,jatekosNyer,gepNyer);
+                j++;
+            }
+            stat.Close();
+        }
     }
+ 
 }
