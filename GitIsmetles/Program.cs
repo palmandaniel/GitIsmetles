@@ -120,6 +120,8 @@ namespace GitIsmetles
         }
         private static void StatisztikaFajlbol()
         {
+            Console.WriteLine("*------------->Statisztika<-------------*");
+            Console.WriteLine("|Menet            ||Játékos győzelmek||Gép győzelmek   |");
             StreamReader stat = new StreamReader("statisztika.txt");
             while (!stat.EndOfStream)
             {
@@ -132,22 +134,23 @@ namespace GitIsmetles
                 {
                     adat[i] = int.Parse(sor[i]);
                 }
-                Console.WriteLine("{0}\t{1}\t{2}", sor[0], sor[1], sor[2]);
-                break;
+                Console.WriteLine("|{0}                ||{1}               ||{2}              |", sor[0], sor[1], sor[2]);
             }
             stat.Close();
 
- 
+          
             Console.WriteLine("*----------->Statisztika vége<-----------*\n");
         }
 
         private static void StatisztikaFajlba()
         {
+            //bonyolultabb
+            //FileStream ki = new FileStream("statisztika.txt", FileMode.Append);
             int j = 0;
-            StreamWriter stat = new StreamWriter("statisztika.txt");
+            StreamWriter stat = new StreamWriter("statisztika.txt", true);
             while (tovabb == false && j<1)
             {
-                stat.WriteLine("{0};{1};{2}",menet,jatekosNyer,gepNyer);
+                stat.WriteLine("{0}; {1}; {2}",menet,jatekosNyer,gepNyer);
                 j++;
             }
             stat.Close();
